@@ -1,0 +1,20 @@
+.page-main {
+  position: relative;
+
+  &__bg {
+    width: 100%;
+    height: 1000px;
+    opacity: 0.15;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include breakpoint(small only) {
+      height: 18%;
+    }
+  }
+}

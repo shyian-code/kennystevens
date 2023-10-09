@@ -1,0 +1,71 @@
+.bg-img-text {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $theme_color;
+  position: relative;
+  z-index: 1;
+  color: transparentize($white, 0.25);
+  text-align: center;
+
+  @include breakpoint(large) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  &__row {
+    justify-content: center;
+  }
+
+  &__slider {
+    @include flex-grid-row();
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    opacity: 0.25;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__text {
+    font-family: $ff-text-light;
+    margin-bottom: 35px;
+
+    @include breakpoint(medium) {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    @include breakpoint(large) {
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+
+    p {
+      font-size: rem-calc(30);
+      line-height: 1.2;
+    }
+
+    &-wrapper {
+      width: 100%;
+
+      @include breakpoint(large down) {
+        padding: 0 20px;
+      }
+    }
+  }
+
+  &__author {
+    font-family: $ff-text-medium;
+    font-size: 13px;
+    line-height: 1.77;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+  }
+}

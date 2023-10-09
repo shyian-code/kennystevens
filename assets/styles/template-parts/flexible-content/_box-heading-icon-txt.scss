@@ -1,0 +1,104 @@
+.box-heading-icon-txt {
+  position: relative;
+
+  @include breakpoint(large down) {
+    padding-top: $top_off !important;
+    padding-bottom: $bottom_off !important;
+  }
+
+  @include breakpoint(small only) {
+    padding-top: $top_off_sm !important;
+    padding-bottom: $bottom_off_sm !important;
+  }
+
+  &__row {
+    justify-content: space-between;
+
+    &--top {
+      max-width: $row_width_narrow;
+      justify-content: center;
+    }
+  }
+
+  &__col {
+    @include column(100);
+
+    @include breakpoint(medium) {
+      @include column(32);
+    }
+
+    &--offset {
+      @include breakpoint(small only) {
+        padding-top: 0 !important;
+      }
+    }
+  }
+
+  &__box {
+    min-height: 380px;
+    justify-content: center;
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+      padding: 30px 20px;
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(large) {
+      padding: 50px 48px;
+      margin-bottom: 0;
+    }
+
+    &-title {
+      color: $color_120;
+    }
+
+    &-subtitle {
+      font-size: 13px;
+      font-family: $ff-text-medium;
+      letter-spacing: 0.1px;
+      color: $color_101;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      letter-spacing: 0.1px;
+      margin-bottom: 0;
+    }
+
+    &-txt {
+      font-family: $ff-text-medium;
+      color: $theme_color;
+      font-size: rem_calc(118px);
+      margin: 0;
+      line-height: inherit;
+      display: inline-block;
+
+      &-wrap {
+        font-size: 0;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem-calc($fs_h1);
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 25px;
+
+    @include breakpoint(xxlarge) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-wrapper {
+    margin-bottom: 30px;
+  }
+}

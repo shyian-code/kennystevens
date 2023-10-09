@@ -1,0 +1,72 @@
+.section {
+  opacity: 0;
+
+  .animate-up {
+    opacity: 0;
+    transform: translateY($translateY_1);
+  }
+
+  &.active {
+    animation: fadeIn 0.5s ease-in;
+    animation-fill-mode: forwards;
+
+    .animate-up {
+      animation-name: fadeInUp;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+
+      @for $i from 1 to 50 {
+        &--#{$i} {
+          animation-delay: #{0.2 + (0.1 * $i)}s;
+        }
+      }
+
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.load-later {
+  .load-img {
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $color_5;
+      z-index: -1;
+    }
+  }
+
+  .text-box.hero__text-bottom--one-slide,
+  .text-box.hero__text-left--one-slide,
+  .slick-arrow {
+    opacity: 0;
+  }
+
+  &.loaded {
+    .text-box.hero__text-bottom--one-slide,
+    .text-box.hero__text-left--one-slide,
+    .slick-arrow {
+      animation: fadeIn 0.2s ease;
+      animation-fill-mode: forwards;
+    }
+
+    .load-img {
+      &::after {
+        animation: fadeOut 0.3s ease 0.2s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.page-id-3 .section {
+  opacity: 1;
+
+  .animate-up {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,99 @@
+.nav-primary {
+  &__menu {
+    .menu-item {
+      &.menu-item-gtranslate {
+        > div {
+          position: static !important;
+        }
+
+        .switcher {
+          width: auto;
+
+          &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top-width: 6px;
+            border-top-style: solid;
+            border-top-color: $color_70;
+            transition: all 0.2s ease-in;
+            position: absolute;
+            top: calc(50% - 16px);
+            right: 15px;
+
+            @include breakpoint(large down) {
+              top: 12px;
+            }
+          }
+
+          a {
+            line-height: 1;
+            text-decoration: none;
+            display: block;
+            padding: 0;
+            font-size: 16px;
+            width: auto;
+            border: none;
+            background: transparent;
+            color: $color_70;
+
+            @include breakpoint(large down) {
+              padding: 0.7rem 0 4px;
+            }
+
+            img {
+              display: none;
+            }
+          }
+
+          .option {
+            position: absolute;
+            left: 30px;
+            top: 100%;
+            background-color: $white;
+            border: 1px solid #cacaca;
+
+            .nturl {
+              color: $color_70;
+              padding: 0.7rem 1rem;
+
+              @include breakpoint(large down) {
+                padding: 20px 20px 4px 20px;
+              }
+            }
+          }
+
+          .selected {
+            background: none;
+          }
+        }
+
+        @include breakpoint(xlarge) {
+          &:hover {
+            a {
+              color: $black;
+            }
+
+            .option {
+              .nturl {
+                color: $color_70;
+
+                &:hover {
+                  color: $black;
+                }
+              }
+            }
+
+            .switcher {
+              &::after {
+                border-top-color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

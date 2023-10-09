@@ -1,0 +1,153 @@
+.footer {
+  &-cta {
+    padding-top: 155px;
+    padding-bottom: 155px;
+    background-color: $color_70;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(small only) {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    &__bg {
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+      opacity: 0.25;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    &__row {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__title {
+      color: $black;
+      margin-bottom: 15px;
+      font-size: rem-calc($fs_h1);
+      text-align: center;
+    }
+
+    &__text {
+      margin-bottom: 42px;
+    }
+
+    &__cta {
+      padding: 11px 52px;
+    }
+  }
+
+  &-signup {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    background-color: $theme_color;
+    color: $white;
+
+    &__row {
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $white;
+    }
+
+    &__text {
+      @include column(100);
+
+      margin-bottom: 20px;
+
+      @include breakpoint(large) {
+        @include column(36);
+      }
+
+      @include breakpoint(small only) {
+        text-align: center;
+        padding: 0 25px;
+      }
+    }
+
+    &__form {
+      @include column(100);
+
+      @include breakpoint(large) {
+        @include column(60);
+      }
+    }
+  }
+
+  &-details {
+    color: $text-color;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background-color: $color_100;
+
+    @include breakpoint(medium down) {
+      padding-bottom: 75px;
+    }
+  }
+
+  &__row {
+    justify-content: center;
+  }
+
+  &__logo {
+    width: 138px;
+    margin-bottom: 22px;
+  }
+
+  &__text {
+    @include column(100);
+
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 42px;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      @include column(25);
+
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &-icon {
+      display: block;
+      font-size: rem-calc(25);
+      color: $white;
+    }
+
+    &-link {
+      display: block;
+    }
+
+    a {
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__social {
+    margin-bottom: 46px;
+  }
+
+  &__image-link {
+    width: 146px;
+    margin-bottom: 46px;
+  }
+}

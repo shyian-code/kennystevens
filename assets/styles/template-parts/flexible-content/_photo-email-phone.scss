@@ -1,0 +1,69 @@
+.photo-email-phone {
+  @include breakpoint(large down) {
+    padding-top: $top_off !important;
+    padding-bottom: $bottom_off !important;
+  }
+
+  @include breakpoint(small only) {
+    padding-top: $top_off_sm !important;
+    padding-bottom: $bottom_off_sm !important;
+  }
+
+  &__row {
+    max-width: $row_width_narrow_up;
+  }
+
+  &__col {
+    background-color: $color_5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--narrow {
+      @include column(29);
+    }
+
+    &--wide {
+      @include column(71);
+
+      padding: 40px 70px;
+
+      @include mq(640, 767) {
+        padding: 20px 40px;
+      }
+
+      @include breakpoint(small only) {
+        padding: 50px 40px;
+      }
+    }
+
+    @include breakpoint(small only) {
+      @include column(100);
+    }
+  }
+
+  &__title {
+    font-size: rem-calc($fs_h1);
+
+    @include breakpoint(small only) {
+      font-size: rem-calc($fs_h3);
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    color: $color_80;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link {
+    margin-right: 20px;
+  }
+}

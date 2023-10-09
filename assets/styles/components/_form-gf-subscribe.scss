@@ -1,0 +1,213 @@
+body {
+  .subscribe-form_wrapper {
+    form.subscribe-form {
+      display: flex;
+
+      @include breakpoint(small only) {
+        flex-direction: column;
+      }
+
+      .validation_error {
+        @include column(100);
+      }
+
+      .gform_body {
+        width: auto;
+
+        @include column(86);
+
+        @include breakpoint(small only) {
+          @include column(100);
+        }
+
+        ul.gform_fields {
+          display: flex;
+          justify-content: space-between;
+
+          @include breakpoint(small only) {
+            flex-direction: column;
+          }
+
+          li.gfield {
+            padding-right: 0;
+            margin: 0;
+
+            .gfield_label {
+              @extend .form__input-label;
+            }
+
+            input {
+              &[type="email"],
+              &[type="number"],
+              &[type="password"],
+              &[type="tel"],
+              &[type="text"],
+              &[type="url"] {
+                height: 50px;
+                border: 2px solid $white;
+                color: transparentize($white, 0.2);
+                background: transparent;
+                width: 100%;
+                padding: 0 20px !important;
+                font-size: 14px !important;
+                font-family: $ff-text-light !important;
+                font-weight: initial !important;
+                letter-spacing: 0.1px;
+
+                @include placeholder {
+                  color: $white;
+                }
+
+                &::-ms-clear {
+                  display: none;
+                }
+
+                &:focus {
+                  outline: none;
+                }
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:hover,
+                &:-webkit-autofill:focus,
+                &:-webkit-autofill:active {
+                  -webkit-box-shadow: 0 0 0 30px white inset;
+                  background: none;
+                }
+              }
+
+              &:not([type="radio"]),
+              &:not([type="checkbox"]),
+              &:not([type="submit"]),
+              &:not([type="button"]),
+              &:not([type="image"]),
+              &:not([type="file"]) {
+                margin: 0;
+              }
+            }
+
+            &.gfield_error {
+              background-color: transparent;
+              width: 100%;
+              max-width: 100% !important;
+              margin-bottom: 0 !important;
+              border: none;
+              padding: 0;
+
+              .gfield_description {
+                padding-top: 6px;
+              }
+
+              input {
+                &:not([type="radio"]),
+                &:not([type="checkbox"]),
+                &:not([type="submit"]),
+                &:not([type="button"]),
+                &:not([type="image"]),
+                &:not([type="file"]) {
+                  border: 2px solid $white !important;
+                }
+              }
+            }
+
+            div.ginput_container {
+              margin-top: 0 !important;
+              width: 100%;
+
+              &.ginput_container_name {
+                span {
+                  padding-top: 0;
+                  padding-right: 20px;
+
+                  @include breakpoint(small only) {
+                    margin: 0 0 16px 0;
+                    padding-right: 0;
+                  }
+                }
+
+                input {
+                  &[type="email"],
+                  &[type="number"],
+                  &[type="password"],
+                  &[type="tel"],
+                  &[type="text"],
+                  &[type="url"] {
+                    ~ label {
+                      font-size: 0;
+                      margin: 0;
+                      position: absolute;
+                      z-index: -100;
+                      opacity: 0;
+                    }
+                  }
+                }
+              }
+            }
+
+            @include column(100);
+
+            @include breakpoint(medium) {
+              @include column(65);
+            }
+
+            &.flex-wide-col {
+              @include column(100);
+
+              @include breakpoint(medium) {
+                @include column(35);
+              }
+            }
+          }
+        }
+      }
+
+      .gform_footer {
+        width: auto;
+
+        @include column(100);
+
+        @include breakpoint(medium) {
+          align-self: flex-start;
+
+          @include column(14);
+        }
+
+        @extend .btn;
+        @extend .btn--white-flat;
+
+        padding: 0;
+        border: none;
+
+        @include breakpoint(medium) {
+          margin: 0;
+        }
+
+        input.button {
+          height: 50px;
+          width: 100%;
+          margin: 0;
+          color: inherit;
+          padding: 0 11px;
+          background-color: transparent;
+          border: 2px solid $white;
+          border-left: none;
+          font-size: 16px;
+        }
+
+        .gform_ajax_spinner {
+          width: 25px !important;
+          height: 15px !important;
+          position: absolute;
+          right: -30px;
+          top: 0;
+          z-index: 1;
+        }
+      }
+    }
+
+    &.gform_validation_error {
+      form.subscribe-form {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+/** Import everything from autoload */
+@import "./autoload/*.scss";
+
+/** Common */
+@import "common/variables";
+@import "common/mixins";
+@import "common/typography";
+@import "common/wp";
+@import "common/global";
+@import "common/keyframes";
+@import "common/animation";
+@import "common/slick-sliders";
+
+/** Components */
+@import "components/*.scss";
+
+/** Template parts */
+@import "template-parts/hero/*.scss";
+@import "template-parts/common/*.scss";
+@import "template-parts/flexible-content/*.scss";
+
+/** Layouts */
+@import "layouts/parts";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/nav-social";
+@import "layouts/nav-primary";
+@import "layouts/nav-primary-submenu";
+@import "layouts/posts";
+@import "layouts/pages";
+@import "layouts/sidebar";
+@import "layouts/map";

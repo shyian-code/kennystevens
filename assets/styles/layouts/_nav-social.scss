@@ -1,0 +1,27 @@
+.nav-social {
+  .menu-item {
+    padding: 0;
+    margin-right: 70px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    a {
+      visibility: hidden;
+      font-size: 0;
+      padding: 0;
+    }
+  }
+
+  &__icon.fa {
+    font-size: rem-calc($fs_h4);
+    visibility: visible;
+    color: $white;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.cols-details {
+  @include breakpoint(small only) {
+    &.pt {
+      padding-top: $top_off_sm !important;
+    }
+
+    &.pb {
+      padding-bottom: $bottom_off_sm !important;
+    }
+  }
+
+  @include breakpoint(large down) {
+    &.pt {
+      padding-top: $top_off !important;
+    }
+
+    &.pb {
+      padding-bottom: $bottom_off !important;
+    }
+  }
+
+  &__row {
+    padding-left: 0;
+    padding-right: 0;
+    justify-content: space-between;
+    background-color: $color_5;
+
+    &--reverse {
+      @include breakpoint(medium) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__col {
+    &--txt {
+      padding: 35px 20px;
+
+      @include column(100);
+
+      @include breakpoint(medium) {
+        padding: 35px 50px;
+
+        @include column(50);
+      }
+    }
+
+    &--img {
+      @include column(100);
+
+      @include breakpoint(medium) {
+        @include column(50);
+      }
+
+      @include breakpoint(large) {
+        @include column(46);
+      }
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__title {
+    font-size: rem-calc($fs_h2);
+    letter-spacing: -1px;
+
+    @include breakpoint(large) {
+      font-size: rem-calc($fs_h1);
+    }
+  }
+
+  &__table {
+    width: 100%;
+
+    @include breakpoint(medium) {
+      width: 60%;
+    }
+  }
+
+  &__img {
+    opacity: 0;
+  }
+}

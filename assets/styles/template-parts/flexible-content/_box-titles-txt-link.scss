@@ -1,0 +1,43 @@
+.box-titles-txt-link {
+  @include breakpoint(large down) {
+    padding-top: $top_off !important;
+    padding-bottom: $bottom_off !important;
+  }
+
+  @include breakpoint(small only) {
+    padding-top: $top_off_sm !important;
+    padding-bottom: $bottom_off_sm !important;
+  }
+
+  &__row {
+    justify-content: space-between;
+  }
+
+  &__col {
+    @include column(100);
+
+    @include breakpoint(medium) {
+      @include column(49);
+    }
+
+    &--offset {
+      @include breakpoint(small only) {
+        padding-top: 0 !important;
+      }
+    }
+  }
+
+  &__box {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+
+    @include breakpoint(medium) {
+      padding: 60px 50px;
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(small only) {
+      transform: translateY(0) !important;
+    }
+  }
+}

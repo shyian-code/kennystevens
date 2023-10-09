@@ -1,0 +1,245 @@
+.hero {
+  &__row {
+    justify-content: center;
+    padding-bottom: 60px;
+
+    @include breakpoint(medium down) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include breakpoint(medium) {
+      padding-bottom: 80px;
+    }
+
+    @include breakpoint(large) {
+      padding-bottom: 120px;
+    }
+  }
+
+  &__bg {
+    min-height: 260px;
+    width: 100%;
+    position: relative;
+
+    @include breakpoint(small) {
+      margin-bottom: -30px;
+    }
+
+    @include breakpoint(medium) {
+      padding: 50px 20px;
+      min-height: 390px;
+    }
+
+    @include breakpoint(large) {
+      min-height: 505px;
+    }
+
+    @include breakpoint(large only) {
+      padding: 50px 100px;
+      min-height: 505px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 50px;
+      min-height: 505px;
+    }
+
+    @include breakpoint(xlarge) {
+      padding: 78px 100px 150px;
+
+      &--height {
+        padding: 50px 100px 50px;
+      }
+
+      &--no-text {
+        min-height: 650px;
+      }
+    }
+
+    &-layer {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      @include breakpoint(xxlarge) {
+        transform: scale(1);
+        opacity: 0.5;
+        transition: all 300ms ease;
+      }
+
+      &--bigger {
+        height: 100%;
+
+        @include breakpoint(xlarge) {
+          height: calc(100% + 60px);
+        }
+
+        @include breakpoint(medium only) {
+          height: calc(100% - 10px);
+        }
+
+        @include breakpoint(small) {
+          height: calc(100% + 20px);
+        }
+      }
+
+      &--smaller {
+        @include breakpoint(small only) {
+          height: calc(100% - 40px);
+        }
+
+        @include breakpoint(medium) {
+          height: calc(100% + 80px);
+        }
+      }
+
+      &--height {
+        //min-height: 650px;
+      }
+
+      &--one-slide {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  .slick-slide {
+    @include breakpoint(xxlarge) {
+      width: $global-width;
+    }
+
+    &.slick-center,
+    &.slick-active {
+      .hero__bg-layer {
+        opacity: 1;
+        transform: scale(1);
+        background-position: center;
+      }
+
+      .text-box {
+        animation: fadeIn 0.5s ease-in;
+        animation-fill-mode: both;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__text {
+    &-bottom {
+      width: calc(100% - 10px);
+      text-align: left;
+      align-items: flex-start;
+
+      @include breakpoint(small only) {
+        padding: 30px 20px;
+      }
+
+      @include breakpoint(medium) {
+        align-items: center;
+        text-align: center;
+      }
+
+      @include breakpoint(large) {
+        width: calc(100% - 200px);
+      }
+
+      p {
+        letter-spacing: 0.1px;
+      }
+
+      &--mobile {
+        @include breakpoint(small only) {
+          width: 100%;
+          text-align: center;
+
+          h1,
+          h2,
+          h3 {
+            letter-spacing: -1.1px;
+
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &--one-slide {
+        opacity: 1;
+      }
+    }
+
+    &-left {
+      align-items: flex-start;
+      min-height: 430px;
+      justify-content: center;
+
+      &.hero__text-left_new {
+        min-height: inherit;
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      @include breakpoint(small only) {
+        flex: 1 1 calc(100% - 50px);
+        max-width: calc(100% - 50px);
+        margin: 0 auto 25px;
+        padding: 30px 20px 40px 20px;
+        min-height: 0;
+      }
+
+      @include breakpoint(medium) {
+        @include column(68);
+      }
+
+      @include breakpoint(large) {
+        @include column(50);
+      }
+
+      @include breakpoint(xlarge) {
+        @include column(49);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: $ff-text-regular;
+      }
+
+      p {
+        color: $color_80;
+        letter-spacing: normal;
+      }
+
+      &--one-slide {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 47px;
+  }
+}
+
+.half-height {
+  min-height: 200px;
+
+  @include breakpoint(medium) {
+    min-height: 250px;
+  }
+}

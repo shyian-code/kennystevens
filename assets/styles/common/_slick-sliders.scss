@@ -1,0 +1,109 @@
+.slick {
+  &-arrow {
+    position: absolute;
+    top: 110px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border: none;
+    font-size: 0;
+    background: $black;
+
+    @include breakpoint(medium) {
+      position: absolute;
+      top: calc(550px / 2 - 25px);
+    }
+
+    &::before {
+      content: "";
+      width: 23px;
+      height: 8px;
+      display: inline-block;
+      background-image: url("../images/arrow-white.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &-prev {
+    left: 20px;
+
+    @include breakpoint(large) {
+      left: 0;
+    }
+
+    &::before {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-next {
+    right: 20px;
+
+    @include breakpoint(large) {
+      right: 0;
+    }
+  }
+
+  &-dots {
+    //text-align: center;
+    padding-top: 40px;
+    //position: absolute;
+    //top: 100%;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+
+    li {
+      padding: 0 5px;
+
+      button {
+        width: 8px;
+        height: 8px;
+        border: 1px solid $white;
+        border-radius: 50%;
+        background-color: transparent;
+        font-size: 0;
+        color: transparent;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 2px;
+          height: 2px;
+          //background-color: $color-50;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          transition-timing-function: ease-in;
+          transition-duration: 0.2s;
+          transition-property: background-color;
+        }
+      }
+
+      &:hover {
+        button {
+          border: 1px solid $white;
+
+          &::before {
+            background-color: $white;
+          }
+        }
+      }
+
+      &.slick-active {
+        button {
+          border: 1px solid $white;
+
+          &::before {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}

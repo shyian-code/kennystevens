@@ -1,0 +1,50 @@
+.nav-primary {
+  &__menu {
+    > .menu-item {
+      &.menu-item-has-children {
+        &.current-menu-parent {
+          &::after {
+            border-top-color: $black;
+          }
+
+          > a {
+            position: static;
+            background: transparent;
+            color: $black;
+            border-bottom: 1px solid $black;
+
+            @include breakpoint(large down) {
+              border-bottom: none;
+            }
+          }
+
+          .current-menu-item {
+            a {
+              color: $black;
+            }
+          }
+        }
+
+        .sub-menu {
+          .menu-item {
+            display: block;
+
+            > a {
+              padding: 20px 20px 4px 20px;
+            }
+          }
+        }
+
+        .menu {
+          .menu-item {
+            &:hover {
+              a {
+                color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

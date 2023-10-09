@@ -1,0 +1,102 @@
+.links-list-image {
+  position: relative;
+  background-color: $color_5;
+
+  &__bg {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+
+    @include breakpoint(small only) {
+      display: none;
+    }
+  }
+
+  &__row {
+    align-items: center;
+
+    @include breakpoint(small only) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include breakpoint(medium) {
+      min-height: 600px;
+    }
+  }
+
+  &__col {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include column(100);
+
+    @include breakpoint(medium) {
+      height: 100%;
+
+      @include column(50);
+
+      padding: 60px 25px 60px 0;
+    }
+
+    @include breakpoint(large) {
+      padding: 60px 25px;
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+
+    @include breakpoint(medium) {
+      display: none;
+    }
+
+    &-wrapper {
+      padding: 0;
+      text-align: center;
+
+      @include breakpoint(medium) {
+        min-height: 600px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    &-sm {
+      font-size: rem-calc(18);
+    }
+
+    &--bigger {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc($fs_h1);
+        padding-right: 22%;
+      }
+    }
+  }
+
+  &__link {
+    color: $color_80;
+
+    &-wrapper {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

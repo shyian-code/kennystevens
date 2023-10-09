@@ -1,0 +1,71 @@
+.text-box {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px 30px;
+
+  @include breakpoint(xxlarge) {
+    opacity: 0;
+    transition: all 300ms ease;
+  }
+
+  &--white {
+    background-color: $theme_color;
+  }
+
+  &--theme {
+    background-color: $white;
+    box-shadow: 30px 35px 125px 0 rgba(0, 0, 0, 0.07);
+  }
+
+  &__text-above {
+    font-size: 13px;
+    font-family: $ff-text-light;
+    line-height: 1.77;
+    letter-spacing: 0.1px;
+    color: $color_71;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    width: 100%;
+    font-size: rem-calc($fs_h1);
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: normal;
+
+    &--white {
+      color: $white;
+    }
+  }
+
+  &__subtitle {
+    width: 100%;
+    color: transparentize($color_80, 0.25);
+    font-family: $ff-text-light;
+
+    &--white {
+      color: $white;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    font-family: $ff-text-regular;
+    line-height: 1.45;
+  }
+
+  &__text {
+    width: 100%;
+    max-width: $row_width_narrow;
+    padding-top: 20px;
+
+    p {
+      line-height: 1.44;
+    }
+  }
+}
+
+.hero__text-left_new .text-box__text-above {
+  margin-bottom: 10px;
+}

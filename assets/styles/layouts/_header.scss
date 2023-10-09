@@ -1,0 +1,75 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background: white;
+
+  &__brand {
+    position: relative;
+
+    @include breakpoint(large down) {
+      max-width: 60px;
+      max-height: 50px;
+    }
+
+    &--desktop {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-height: 100px;
+      transition: opacity 0.2s ease-in 0.1s, width 0.2s ease-in;
+
+      @include breakpoint(large down) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: block;
+      opacity: 0;
+      position: absolute;
+      left: 39px;
+      top: 0;
+      transition: opacity 0.2s ease-in;
+
+      @include breakpoint(large down) {
+        display: block;
+        opacity: 1;
+        position: static;
+      }
+    }
+  }
+
+  &--sticky {
+    box-shadow: 0 0 27px 0 rgba(0, 0, 0, 0.2);
+
+    @include breakpoint(xlarge) {
+      .header__brand--desktop {
+        opacity: 1;
+        width: 50%;
+        transition: opacity 0.1s ease-in 0s, width 0.2s ease-in;
+      }
+
+      .header__brand--mobile {
+        opacity: 0;
+        transition: opacity 0.1s ease-in;
+      }
+    }
+  }
+
+  &__nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-left: auto;
+    padding-right: 20px;
+
+    @include breakpoint(xlarge) {
+      display: none;
+    }
+  }
+}

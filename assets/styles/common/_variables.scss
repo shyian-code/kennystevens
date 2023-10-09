@@ -1,0 +1,34 @@
+$column_padding_sm: 20;
+$row_width_wide: rem-calc(1180 + 22px + $column_padding * 2);
+$row_width_narrow_up: rem-calc(930 + $column_padding * 2);
+$row_width_narrow: rem-calc(580 + $column_padding * 2);
+
+$top_off_sm: 40px;
+$bottom_off_sm: 40px;
+
+$top_off: 80px;
+$bottom_off: 80px;
+
+$fs_h1: 42;
+$fs_h2: 36;
+$fs_h3: 30;
+$fs_h4: 24;
+
+$white: #fff;
+$black: #000;
+
+$theme_color: #3e694c;
+
+$text-color: transparentize($white, 0.25);
+
+$color_5: #fafbfb;
+$color_65: #bbbcbc;
+$color_70: #9ea1a4;
+$color_71: #9ea4a2;
+$color_80: #606866;
+$color_100: #18231e;
+$color_101: #18231f;
+$color_120: #1c2127;
+
+$translateY_1: 50px;
+$translateX_1: 50px;

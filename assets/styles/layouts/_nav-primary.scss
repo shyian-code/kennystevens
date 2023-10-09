@@ -1,0 +1,165 @@
+.nav {
+  &-primary {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include breakpoint(large down) {
+      position: relative;
+      background: $white;
+    }
+
+    &__menu {
+      @include breakpoint(xlarge) {
+        padding-top: 23px;
+      }
+
+      &--desktop {
+        @include breakpoint(large down) {
+          display: none;
+        }
+      }
+
+      &--mobile {
+        display: none;
+        background-color: white;
+        box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+
+        @include breakpoint(large down) {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 100%;
+          z-index: 15;
+        }
+
+        > div {
+          max-width: 100% !important;
+        }
+      }
+
+      @include breakpoint(large down) {
+        flex-direction: column;
+        background: $white;
+      }
+
+      > li {
+        padding-bottom: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        > a {
+          padding: 0;
+
+          @include breakpoint(large down) {
+            padding: 0.7rem 0 4px;
+          }
+        }
+      }
+
+      > .menu-item {
+        a {
+          background: transparent !important;
+          color: $color_70;
+          font-size: 16px;
+          padding-bottom: 8px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &:hover {
+          > a {
+            color: $black;
+          }
+        }
+
+        .menu {
+          display: none;
+        }
+
+        &.menu-item-has-children {
+          position: relative;
+
+          &::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top-width: 6px;
+            border-top-style: solid;
+            border-top-color: $color_70;
+            transition: border-top-color 0.2s ease-in;
+            position: absolute;
+            top: calc(50% - 15px);
+            right: 15px;
+
+            @include breakpoint(large down) {
+              display: none;
+            }
+          }
+
+          .menu {
+            position: absolute;
+          }
+
+          > a::after {
+            border: inset 4px;
+            right: 8px;
+            margin-top: -10px;
+            border-color: $color_70 transparent transparent;
+          }
+
+          &.opens-right {
+            .menu {
+              left: 30px;
+              right: initial;
+              top: 100%;
+            }
+          }
+
+          &:hover {
+            &::after {
+              border-top-color: $black;
+            }
+
+            .menu {
+              @include breakpoint(large down) {
+                box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+        }
+
+        &.current-menu-item {
+          &::after {
+            border-top-color: $black;
+          }
+
+          > a {
+            background-color: transparent;
+            color: $black;
+            border-bottom: 2px solid $black;
+
+            @include breakpoint(large down) {
+              border-bottom: none;
+              position: static;
+            }
+          }
+        }
+
+        &.is-drilldown-submenu-parent {
+          > a::after {
+            border-color: transparent transparent transparent $color_70;
+          }
+        }
+      }
+    }
+  }
+}
+
+.drilldown .js-drilldown-back > a::before {
+  border-color: transparent $color_70 transparent transparent !important;
+}

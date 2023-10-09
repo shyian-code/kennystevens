@@ -1,0 +1,11 @@
+{
+  "entry": {
+    "main": ["./scripts/main.js", "./styles/main.scss"],
+    "customizer": ["./scripts/customizer.js"]
+  },
+  "publicPath": "/kennystevens/wp-content/themes/kennystevens",
+  "devUrl": "http://kennystevensteam.loc/",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": ["*.php", "**/*.php"]
+}

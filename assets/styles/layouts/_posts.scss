@@ -1,0 +1,94 @@
+.post {
+  &-listing {
+    &__title {
+      font-size: rem-calc($fs_h1);
+      text-align: center;
+
+      @include breakpoint(small only) {
+        padding: 0 15px;
+      }
+    }
+
+    &__text {
+      @include breakpoint(medium) {
+        margin-bottom: 100px;
+      }
+    }
+
+    &__btn-wrap {
+      padding-top: 40px;
+      width: 100%;
+      max-width: 100%;
+
+      .btn {
+        min-width: 280px;
+      }
+    }
+  }
+
+  &--last-mr {
+    @media all and (min-width: 1280px) {
+      margin-right: 34%;
+    }
+  }
+
+  &__inner {
+    max-width: 380px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  &__img {
+    position: relative;
+    z-index: -1;
+
+    &-wrapper {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--default {
+      text-align: center;
+      background-color: $color_5;
+      height: 240px;
+    }
+  }
+}
+
+.single-property {
+  &__header {
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+
+.not-found {
+  @extend .footer-cta;
+
+  background-color: transparent;
+
+  &__row {
+    @extend .footer-cta__row;
+  }
+
+  &__bg {
+    @extend .footer-cta__bg;
+  }
+}

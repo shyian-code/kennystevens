@@ -1,0 +1,30 @@
+.title-text {
+  flex-direction: column;
+  align-items: center;
+
+  &__row {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    width: 100%;
+    margin-bottom: 20px;
+    color: $color_80;
+    font-family: $ff-text-light;
+    letter-spacing: 0.2px;
+  }
+
+  &__text {
+    width: 100%;
+    margin-bottom: 40px;
+
+    p {
+      color: $color_80;
+    }
+  }
+}

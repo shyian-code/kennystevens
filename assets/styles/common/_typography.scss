@@ -1,0 +1,170 @@
+@include font-face("GTWalsheimPro Light", "../fonts/GTWalsheimPro/light/gt-walsheim-pro-light-webfont");
+@include font-face("GTWalsheimPro Regular", "../fonts/GTWalsheimPro/regular/gt-walsheim-pro-regular-webfont");
+@include font-face("GTWalsheimPro Medium", "../fonts/GTWalsheimPro/medium/gt-walsheim-pro-medium-webfont");
+
+$ff-fa: "FontAwesome";
+
+$ff-text-light: "GTWalsheimPro Light";
+$ff-text-regular: "GTWalsheimPro Regular";
+$ff-text-medium: "GTWalsheimPro Medium";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $ff-text-medium;
+  line-height: 1.25;
+  font-weight: initial;
+}
+
+h1 {
+  font-size: rem-calc($fs_h1);
+}
+
+h2 {
+  font-size: rem-calc($fs_h2);
+}
+
+h3 {
+  font-size: rem-calc($fs_h3);
+}
+
+h4 {
+  font-size: rem-calc($fs_h4);
+}
+
+h5 {
+  font-size: rem-calc(23);
+}
+
+h6 {
+  font-size: rem-calc(20);
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+  font-family: $ff-text-regular;
+  line-height: 1.78;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+  transition-property: color, border-color, background-color, opacity, transform;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+}
+
+body {
+  * {
+    &::selection {
+      background: transparentize($theme_color, 0.7);
+    }
+  }
+}
+
+[type="button"],
+[type="submit"],
+button {
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+  transition-property: color, border-color, background-color, opacity, transform;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.text-content {
+  color: $color_80;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: inherit;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:only-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $theme_color;
+
+    &:hover {
+      color: lighten($theme_color, 15);
+    }
+  }
+
+  ol {
+    li {
+      text-align: left;
+      margin-bottom: 5px;
+    }
+  }
+
+  ul {
+    li {
+      display: block;
+      padding-left: 20px;
+      margin-bottom: 5px;
+      text-align: left;
+      position: relative;
+
+      &::before {
+        content: "-";
+        color: $theme_color;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &--black {
+    color: $color_120;
+  }
+}
+
+label {
+  font-size: rem-calc(16);
+}
